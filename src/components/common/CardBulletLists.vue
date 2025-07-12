@@ -17,9 +17,7 @@ defineProps<{
     ></div>
 
     <!-- Main card -->
-    <div
-      class="relative border border-zinc-700/50 rounded-2xl p-8 bg-zinc-800/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-zinc-600/50"
-    >
+    <div class="bg-gradient-card-border p-8">
       <div class="flex flex-col items-center text-white gap-4">
         <!-- Icon with gradient background -->
         <div

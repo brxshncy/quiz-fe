@@ -3,11 +3,13 @@ import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import CardBulletLists from "@/components/common/CardBulletLists.vue";
 import {
   AcademicCapIcon,
-  ArrowDownCircleIcon,
   ArrowRightCircleIcon,
   BookOpenIcon,
 } from "@heroicons/vue/24/outline";
 import Button from "@/components/ui/button/Button.vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const items = [
   "Browse available subjects and quizzes",
@@ -20,9 +22,9 @@ const items = [
 <template>
   <DefaultLayout>
     <main
-      class="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 flex flex-col items-center justify-center w-full px-4"
+      class="flex flex-col items-center justify-center w-full px-4 min-h-screen"
     >
-      <div class="max-w-4xl mx-auto text-center">
+      <div class="max-w-3xl mx-auto text-center w-full">
         <!-- Hero Section -->
         <div class="mb-12">
           <div
@@ -54,6 +56,7 @@ const items = [
         <!-- CTA Button -->
         <div class="space-y-4">
           <Button
+            @click="router.push('/dashboard')"
             class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
           >
             <ArrowRightCircleIcon class="h-6 w-6 mr-2" />
