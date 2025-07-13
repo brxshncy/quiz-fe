@@ -13,11 +13,11 @@ defineProps<{
   <div class="relative group">
     <!-- Background gradient -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300"
+      class="absolute bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300"
     ></div>
 
     <!-- Main card -->
-    <div class="bg-gradient-card-border p-8">
+    <div class="bg-gradient-card-border p-8 max-w-xl mx-auto">
       <div class="flex flex-col items-center text-white gap-4">
         <!-- Icon with gradient background -->
         <div
@@ -59,6 +59,11 @@ defineProps<{
           </span>
         </li>
       </ul>
+
+      <!-- Call to Action Button -->
+      <div class="flex justify-center mt-8">
+        <slot name="callToActionBtn" />
+      </div>
     </div>
   </div>
 </template>

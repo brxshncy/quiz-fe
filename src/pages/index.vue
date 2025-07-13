@@ -8,6 +8,7 @@ import {
 } from "@heroicons/vue/24/outline";
 import Button from "@/components/ui/button/Button.vue";
 import { useRouter } from "vue-router";
+import ButtonCta from "@/components/common/button/ButtonCta.vue";
 
 const router = useRouter();
 
@@ -46,23 +47,24 @@ const items = [
         <!-- CardBulletLists Component -->
         <div class="mb-12">
           <CardBulletLists
-            title="Student"
+            title="Student Portal"
             description="Take quizzes and track your learning progress"
             :items="items"
             :icon="AcademicCapIcon"
-          />
+          >
+            <template #callToActionBtn>
+              <ButtonCta
+                btnClass="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold text-lg  rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+                btnLabel="Take a Quiz"
+                :btnIcon="ArrowRightCircleIcon"
+                :btnAction="() => router.push('/dashboard')"
+              />
+            </template>
+          </CardBulletLists>
         </div>
 
         <!-- CTA Button -->
         <div class="space-y-4">
-          <Button
-            @click="router.push('/dashboard')"
-            class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
-          >
-            <ArrowRightCircleIcon class="h-6 w-6 mr-2" />
-            Take a Quiz
-          </Button>
-
           <div class="flex justify-center space-x-4 mt-6">
             <a
               href="/auth/admin/login"
